@@ -16,10 +16,11 @@ plot(x)
 print(x)
 @
 
-<<echo=TRUE,results='asis'>>=
+<<echo=TRUE,results='asis', fig.width=5, fig.height=5, out.width="0.4\\textwidth">>=
 x <- 1:10
 plot(x)
 print(x)
+plot(rnorm(100))
 @
 
 <<init, include=FALSE>>=
@@ -32,6 +33,11 @@ TAB <- table(x)
 xtable(TAB)
 @
 
+Now use cache to speed up the computation
+<<first_cache, cache=TRUE>>=
+Sys.sleep(2)
+plot(1:3, main="cached figure")
+@
 
 
 @
